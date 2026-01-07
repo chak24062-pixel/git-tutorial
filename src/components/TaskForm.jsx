@@ -26,8 +26,9 @@ function TaskForm({ addTask }) {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       >
-        <option value="ダンス">ダンス</option>
         <option value="課題">課題</option>
+        <option value="バイト">バイト</option>
+        <option value="サークル">サークル</option>
         <option value="その他">その他</option>
       </select>
 
