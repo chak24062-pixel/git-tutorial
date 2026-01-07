@@ -2,7 +2,7 @@ import TaskItem from "./TaskItem";
 
 function TaskList({ tasks, toggleTask, deleteTask }) {
   if (tasks.length === 0) {
-    return <p>タスクはまだありません</p>;
+    return <p>お疲れ様です!現在タスクはありません</p>;
   }
 
   return (

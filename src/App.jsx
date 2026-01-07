@@ -1,24 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
 function App() {
-  // タスク一覧の状態
-  const [tasks, setTasks] = useState([]);
+  // 初期値をlocalStorageから取得
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
 
-  // タスク追加
+  // tasksが変わるたびに保存
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const addTask = (title, category) => {
     const newTask = {
       id: Date.now(),
-      title: title,
-      category: category,
+      title,
+      category,
       completed: false,
     };
     setTasks([...tasks, newTask]);
   };
 
-  // 完了 / 未完了 切り替え
   const toggleTask = (id) => {
     setTasks(
       tasks.map((task) =>
@@ -29,7 +35,6 @@ function App() {
     );
   };
 
-  // タスク削除
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
@@ -48,3 +53,4 @@ function App() {
 }
 
 export default App;
+
