@@ -15,15 +15,17 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = (title, category) => {
-    const newTask = {
-      id: Date.now(),
-      title,
-      category,
-      completed: false,
-    };
-    setTasks([...tasks, newTask]);
+  const addTask = (title, category, date) => {
+  const newTask = {
+    id: Date.now(),
+    title,
+    category,
+    date,          // ← 追加
+    completed: false,
   };
+  setTasks([...tasks, newTask]);
+};
+
 
   const toggleTask = (id) => {
     setTasks(

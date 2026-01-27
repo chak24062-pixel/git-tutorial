@@ -13,6 +13,7 @@ function TaskItem({ task, toggleTask, deleteTask }) {
         }}
       >
         {task.title}（{task.category}）
+        {task.date && ` / ${task.date}`}
       </span>
 
       <button onClick={() => deleteTask(task.id)}>削除</button>

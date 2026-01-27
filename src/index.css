@@ -68,3 +68,24 @@ body {
 .task-item span[style*="line-through"] {
   color: #999;
 }
+
+.category-list {
+  font-size: 0.85em;
+  list-style: none;
+  padding: 0;
+}
+
+.category-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.category-list button {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 1em;
+}

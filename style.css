@@ -22,3 +22,26 @@ p,ul,ol,dl,address {
 p, li, dd, dt, address {
   line-height: 1.5;
 }
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.task-form input,
+.task-form select {
+  padding: 8px;
+  font-size: 1em;
+}
+
+.category-add {
+  display: flex;
+  gap: 8px;
+}
+
+.task-form button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
